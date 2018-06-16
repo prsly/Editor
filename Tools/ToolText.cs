@@ -1,4 +1,4 @@
-namespace DrawTools
+﻿namespace DrawTools
 {
     using System.Reflection;
     using System.Windows.Forms;
@@ -9,7 +9,7 @@ namespace DrawTools
 
     public class ToolText : ToolRectangle
     {
-        #region Constructors
+        #region Конструктор
 
         public ToolText()
         {
@@ -17,9 +17,9 @@ namespace DrawTools
             MinSize = new System.Drawing.Size(40, 20);
         }
 
-        #endregion Constructors
+        #endregion Конструктор
 
-        #region Methods
+        #region Методы
 
         public override void OnMouseDown(DrawArea drawArea, MouseEventArgs e)
         {
@@ -51,6 +51,6 @@ namespace DrawTools
             objectAdded.Rect = rect;
         }
 
-        #endregion Methods
+        #endregion Методы
     }
 }

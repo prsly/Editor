@@ -143,9 +143,9 @@
                 drawArea.FileName = fileName;
                 ResizeDrawArea();
             }
-            catch (Exception ex)
-            {
-            }
+         //   catch (Exception ex)
+        //    {
+        //    }
             finally
             {
                 if (reader != null) reader.Close();
@@ -213,9 +213,9 @@
                 drawArea.SaveToXml(writer);
                 MessageBox.Show(@"Save Done");
             }
-            catch (Exception ex)
-            {
-            }
+          //  catch (Exception ex)
+           // {
+          //  }
             finally
             {
                 if (writer != null) writer.Close();

@@ -138,7 +138,6 @@ namespace DrawTools
             get; set;
         }
 
-        [CLSCompliant(false)]
         public GraphicsList GraphicsList
         {
             get
@@ -261,9 +260,7 @@ namespace DrawTools
             _tools[(int)DrawToolType.Line] = new ToolLine();
             _tools[(int)DrawToolType.Polygon] = new ToolPolygon();
             _tools[(int)DrawToolType.Text] = new ToolText();
-            _tools[(int)DrawToolType.Bitmap] = new ToolImage();
-            _tools[(int)DrawToolType.Pan] = new ToolPan();
-            _tools[(int)DrawToolType.Path] = new ToolPath();
+           _tools[(int)DrawToolType.Path] = new ToolPath();
 
             Graphics g = Owner.CreateGraphics();
             DrawObject.Dpi = new PointF(g.DpiX,g.DpiY);

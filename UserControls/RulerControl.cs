@@ -273,11 +273,11 @@ namespace Lyquidity.UtilityLibrary.Controls
 			this.Name = "RulerControl";
 			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.RulerControl_MouseUp);
 
-			base.SetStyle(System.Windows.Forms.ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.DoubleBuffer, true);
 
 #if FRAMEWORKMENUS
 			this.ContextMenu = new ContextMenu();
-			this.ContextMenu.Popup +=new EventHandler(ContextMenu_Popup);
+            ContextMenu.Popup +=new EventHandler(ContextMenu_Popup);
 #endif
 
 		}

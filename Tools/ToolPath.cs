@@ -1,11 +1,11 @@
-namespace DrawTools
+﻿namespace DrawTools
 {
     using System.Drawing;
     using System.Reflection;
     using System.Windows.Forms;
 
     using Draw;
-
+    //полигон
     public class ToolPath : ToolObject
     {
         #region Fields

@@ -41,9 +41,6 @@ namespace VectorEditor.Tools.ToolBoxes
                 case "radioButton_ellipse":
                     ToolSelection = "Ellipse";
                     break;
-                case "radioButton_pan":
-                    ToolSelection = "Pan";
-                    break;
                 case "radioButton_pencil":
                     ToolSelection = "Pencil";
                     break;
@@ -52,9 +49,6 @@ namespace VectorEditor.Tools.ToolBoxes
                     break;
                 case "radioButton_path":
                     ToolSelection = "Path";
-                    break;
-                case "radioButton_image":
-                    ToolSelection = "Image";
                     break;
             }
 
@@ -77,9 +71,6 @@ namespace VectorEditor.Tools.ToolBoxes
                     break;
                 case DrawTools.DrawArea.DrawToolType.Line:
                     radioButton_line.Checked = true;
-                    break;
-                case DrawTools.DrawArea.DrawToolType.Pan:
-                    radioButton_pan.Checked = true;
                     break;
                 case DrawTools.DrawArea.DrawToolType.Polygon:
                     radioButton_pencil.Checked = true;

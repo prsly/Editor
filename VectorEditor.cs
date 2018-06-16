@@ -241,5 +241,10 @@
         {
             _svgMainFiles.SaveDocument("");
         }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

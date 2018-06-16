@@ -28,7 +28,7 @@ namespace DrawTools
         public override void OnMouseMove(DrawArea drawArea, MouseEventArgs e)
         {
             drawArea.Cursor = Cursor;
-            if ( e.Button == MouseButtons.Left )
+            if (e.Button == MouseButtons.Left)
             {
                 var point = new Point(e.X, e.Y);
                 drawArea.GraphicsList[0].MoveHandleTo(point, 2);

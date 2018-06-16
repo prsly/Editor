@@ -31,7 +31,6 @@ using System.Drawing;
             drawArea.Refresh();
         }
 
-        [CLSCompliant(false)]
         protected void AddNewObject(DrawArea drawArea, DrawObject o)
         {
             drawArea.GraphicsList.UnselectAll();

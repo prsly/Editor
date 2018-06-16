@@ -1,4 +1,4 @@
-namespace DrawTools
+п»їnamespace DrawTools
 {
     using System;
     using System.Drawing;
@@ -8,7 +8,7 @@ namespace DrawTools
     using Draw;
 
     using SVGLib;
-
+    //РєР°СЂР°РЅРґР°С€
     public class ToolPolygon : ToolObject
     {
         #region Fields
@@ -33,8 +33,6 @@ namespace DrawTools
 
         public override void OnMouseDown(DrawArea drawArea, MouseEventArgs e)
         {
-            // создаем новый полигон, добавляем к листу 
-            // храним референс на него
             _newPolygon = new DrawPolygon(e.X, e.Y, e.X + 1, e.Y + 1);
             AddNewObject(drawArea, _newPolygon);
             _lastX = e.X;
@@ -57,12 +55,10 @@ namespace DrawTools
             {
                 if ( distance < MinDistance )
                 {
-                    // дистанция между 2 последними точками меньше минимума
                     _newPolygon.MoveHandleTo(point, _newPolygon.HandleCount);
                 }
                 else
                 {
-                    // добавляем новую точку
                     _newPolygon.AddPoint(point);
                     _lastX = e.X;
                     _lastY = e.Y;

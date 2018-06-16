@@ -121,6 +121,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Tools\ToolPath.cs" />
+    <Compile Include="Tools\ToolPointer.cs" />
+    <Compile Include="Tools\ToolPolygon.cs" />
     <Compile Include="WorkArea.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,14 +142,12 @@
     <Compile Include="WorkSpaceControlBox.Designer.cs">
       <DependentUpon>WorkSpaceControlBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\ToolPath.cs" />
     <Compile Include="Tools\Forms\ShapeProperties.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tools\Forms\ShapeProperties.Designer.cs">
       <DependentUpon>ShapeProperties.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tools\ToolPan.cs" />
     <Compile Include="Tools\Tool.cs" />
     <Compile Include="Tools\Forms\ToolBox.cs">
       <SubType>Form</SubType>
@@ -155,11 +156,8 @@
       <DependentUpon>ToolBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\ToolEllipse.cs" />
-    <Compile Include="Tools\ToolImage.cs" />
     <Compile Include="Tools\ToolLine.cs" />
     <Compile Include="Tools\ToolObject.cs" />
-    <Compile Include="Tools\ToolPointer.cs" />
-    <Compile Include="Tools\ToolPolygon.cs" />
     <Compile Include="Tools\ToolRectangle.cs" />
     <Compile Include="Tools\ToolText.cs" />
     <Compile Include="UserControls\DrawArea.cs">
@@ -243,6 +241,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\Crom.Controls.dll" />
+    <Content Include="bin\Debug\Draw.dll" />
+    <Content Include="bin\Debug\SVGLib.dll" />
+    <Content Include="bin\Debug\SVGLib.xml" />
     <Content Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>

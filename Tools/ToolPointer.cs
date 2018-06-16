@@ -1,11 +1,11 @@
-namespace DrawTools
+п»їnamespace DrawTools
 {
     using System.Collections;
     using System.Drawing;
     using System.Windows.Forms;
 
     using Draw;
-
+    //РєСѓСЂСЃРѕСЂ
     public class ToolPointer : Tool
     {
         #region Fields
@@ -46,7 +46,7 @@ namespace DrawTools
             _selectMode = SelectionMode.None;
             PointF point = new Point(e.X, e.Y);
 
-            // тест для ресайза
+            // ГІГҐГ±ГІ Г¤Г«Гї Г°ГҐГ±Г Г©Г§Г 
             int n = drawArea.GraphicsList.SelectionCount;
 
                 for ( int i = 0; i < n; i++ )
@@ -59,11 +59,11 @@ namespace DrawTools
                     {
                         _selectMode = SelectionMode.Size;
 
-                        // держим изменяемый объект в членах класса
+                        // Г¤ГҐГ°Г¦ГЁГ¬ ГЁГ§Г¬ГҐГ­ГїГҐГ¬Г»Г© Г®ГЎГєГҐГЄГІ Гў Г·Г«ГҐГ­Г Гµ ГЄГ«Г Г±Г±Г 
                         _resizedObject = o;
                         _resizedObjectHandle = handleNumber;
 
-                        // при ресайзе одного объекта, анселектятся все остальные
+                        // ГЇГ°ГЁ Г°ГҐГ±Г Г©Г§ГҐ Г®Г¤Г­Г®ГЈГ® Г®ГЎГєГҐГЄГІГ , Г Г­Г±ГҐГ«ГҐГЄГІГїГІГ±Гї ГўГ±ГҐ Г®Г±ГІГ Г«ГјГ­Г»ГҐ
                         drawArea.GraphicsList.UnselectAll();
                         o.Selected = true;
                         o.MouseClickOnHandle(handleNumber);
@@ -71,7 +71,7 @@ namespace DrawTools
                         break;
                     }
 
-                    if (hitOnOutline && (n == 1)) // если только один объект выбран 
+                    if (hitOnOutline && (n == 1)) // ГҐГ±Г«ГЁ ГІГ®Г«ГјГЄГ® Г®Г¤ГЁГ­ Г®ГЎГєГҐГЄГІ ГўГ»ГЎГ°Г Г­ 
                     {
                         _selectMode = SelectionMode.Size;
                         o.MouseClickOnBorder();
@@ -80,7 +80,7 @@ namespace DrawTools
 
             }
 
-            // тест для сдвига
+            // ГІГҐГ±ГІ Г¤Г«Гї Г±Г¤ГўГЁГЈГ 
             if ( _selectMode == SelectionMode.None )
             {
                 int n1 = drawArea.GraphicsList.Count;
@@ -99,11 +99,11 @@ namespace DrawTools
                 {
                     _selectMode = SelectionMode.Move;
 
-                    // анселектнуть все, если не зажат ctrl и кликнутный объект еще не выбран 
+                    // Г Г­Г±ГҐГ«ГҐГЄГІГ­ГіГІГј ГўГ±ГҐ, ГҐГ±Г«ГЁ Г­ГҐ Г§Г Г¦Г ГІ ctrl ГЁ ГЄГ«ГЁГЄГ­ГіГІГ­Г»Г© Г®ГЎГєГҐГЄГІ ГҐГ№ГҐ Г­ГҐ ГўГ»ГЎГ°Г Г­ 
                     if ( ( Control.ModifierKeys & Keys.Control ) == 0  && !o.Selected )
                         drawArea.GraphicsList.UnselectAll();
 
-                    // выбрать кликнутый объект
+                    // ГўГ»ГЎГ°Г ГІГј ГЄГ«ГЁГЄГ­ГіГІГ»Г© Г®ГЎГєГҐГЄГІ
                     o.Selected = true;
 
                     drawArea.Cursor = Cursors.SizeAll;
@@ -112,7 +112,7 @@ namespace DrawTools
 
             if ( _selectMode == SelectionMode.None )
             {
-                // клик на заднем фоне 
+                // ГЄГ«ГЁГЄ Г­Г  Г§Г Г¤Г­ГҐГ¬ ГґГ®Г­ГҐ 
                 if ( ( Control.ModifierKeys & Keys.Control ) == 0 )
                     drawArea.GraphicsList.UnselectAll();
 
@@ -135,7 +135,7 @@ namespace DrawTools
         {
             var point = new Point(e.X, e.Y);
 
-            // установка курсора, когда мышь не зажата 
+            // ГіГ±ГІГ Г­Г®ГўГЄГ  ГЄГіГ°Г±Г®Г°Г , ГЄГ®ГЈГ¤Г  Г¬Г»ГёГј Г­ГҐ Г§Г Г¦Г ГІГ  
             if ( e.Button == MouseButtons.None )
             {
                 Cursor cursor = null;
@@ -167,16 +167,16 @@ namespace DrawTools
             if ( e.Button != MouseButtons.Left )
                 return;
 
-            // нажатие левой кнопки
+            // Г­Г Г¦Г ГІГЁГҐ Г«ГҐГўГ®Г© ГЄГ­Г®ГЇГЄГЁ
 
-            // разница между пред. и тек. позицией
+            // Г°Г Г§Г­ГЁГ¶Г  Г¬ГҐГ¦Г¤Гі ГЇГ°ГҐГ¤. ГЁ ГІГҐГЄ. ГЇГ®Г§ГЁГ¶ГЁГҐГ©
             float dx = e.X - _lastPoint.X;
             float dy = e.Y - _lastPoint.Y;
 
             _lastPoint.X = e.X;
             _lastPoint.Y = e.Y;
 
-            // ресайз
+            // Г°ГҐГ±Г Г©Г§
             if ( _selectMode == SelectionMode.Size )
             {
                 if ( _resizedObject != null )
@@ -187,7 +187,7 @@ namespace DrawTools
                 }
             }
 
-            // сдвиг
+            // Г±Г¤ГўГЁГЈ
             if ( _selectMode == SelectionMode.Move )
             {
                 int n = drawArea.GraphicsList.SelectionCount;
@@ -214,7 +214,7 @@ namespace DrawTools
         {
             if ( _selectMode == SelectionMode.NetSelection )
             {
-                // выбор группы
+                // ГўГ»ГЎГ®Г° ГЈГ°ГіГЇГЇГ»
                 drawArea.GraphicsList.SelectInRectangle(drawArea.NetRectangle);
 
                 _selectMode = SelectionMode.None;
@@ -223,7 +223,7 @@ namespace DrawTools
 
             if ( _resizedObject != null )
             {
-                // после ресайза
+                // ГЇГ®Г±Г«ГҐ Г°ГҐГ±Г Г©Г§Г 
                 _resizedObject.Normalize();
                 _resizedObject = null;
                 drawArea.ResizeCommand(drawArea.GraphicsList.GetFirstSelected(),
@@ -235,7 +235,7 @@ namespace DrawTools
             drawArea.Capture = false;
             drawArea.Refresh();
 
-            //пушаем команду в undo/redo лист
+            //ГЇГіГёГ ГҐГ¬ ГЄГ®Г¬Г Г­Г¤Гі Гў undo/redo Г«ГЁГ±ГІ
             if (_selectMode == SelectionMode.Move)
             {
                 var movedItemsList = new ArrayList();
