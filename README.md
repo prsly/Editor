@@ -1,4 +1,4 @@
-# Vector-Editor for Uersi :sparkles: :zap: :purple_heart:
+# Vector-Editor
 Простой векторный редактор. Форк забытого богом проекта
 
 # Курсовая работа
